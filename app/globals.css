@@ -63,18 +63,18 @@ nav a.active { opacity: 1; color: var(--lime); }
 .theme-toggle { font-size: 15px; min-width: 36px; padding: 0; }
 .theme-toggle span { line-height: 1; }
 
-.hero { min-height: 860px; height: 100vh; background: #0d2119; color: white; padding: 130px 5vw 54px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+.hero { min-height: 700px; background: #0d2119; color: white; padding: 116px 5vw 58px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
 .hero-grid, .register-grid { position: absolute; inset: 0; opacity: .12; background-image: linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to right, black, transparent 85%); }
 .orb { position: absolute; border-radius: 50%; filter: blur(2px); }
 .orb-one { width: 480px; height: 480px; right: 7vw; top: 17%; background: radial-gradient(circle at 36% 30%, #e4ff9a, #6ea381 38%, #123326 70%); box-shadow: 0 0 100px rgba(172,255,96,.2); opacity: .83; }
 .orb-two { width: 230px; height: 230px; right: 23vw; top: 50%; border: 1px solid rgba(200,255,61,.5); box-shadow: inset 0 0 70px rgba(200,255,61,.1); }
-.eyebrow { position: relative; display: flex; gap: 28px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--lime); }
+.eyebrow { position: relative; display: flex; gap: 28px; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
 .eyebrow span + span { color: rgba(255,255,255,.6); }
 .hero-copy { position: relative; width: min(820px, 70vw); z-index: 2; }
-.hero-kicker { border-left: 2px solid var(--lime); padding-left: 14px; line-height: 1.45; font-size: 15px; font-weight: 700; }
+.hero-kicker { border-left: 2px solid var(--lime); padding-left: 14px; line-height: 1.5; font-size: 17px; font-weight: 700; }
 .hero h1 { font-size: clamp(62px, 8.4vw, 132px); line-height: .92; letter-spacing: -.065em; margin: 24px 0 30px; font-weight: 700; }
 .hero h1 em { color: var(--lime); font-style: normal; }
-.hero-lead { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,.76); max-width: 620px; }
+.hero-lead { font-size: 19px; line-height: 1.85; color: rgba(255,255,255,.78); max-width: 660px; }
 .hero-actions { display: flex; gap: 12px; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-width: 195px; padding: 16px 18px; font-weight: 700; font-size: 13px; border: 1px solid transparent; transition: transform .2s, background .2s; }
 .button:hover { transform: translateY(-2px); }
@@ -82,8 +82,8 @@ nav a.active { opacity: 1; color: var(--lime); }
 .button.ghost { border-color: rgba(255,255,255,.45); }
 .hero-meta { position: absolute; right: 5vw; bottom: 52px; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.35); width: min(520px, 42vw); }
 .hero-meta > div { padding: 14px 16px; border-right: 1px solid rgba(255,255,255,.2); }
-.hero-meta span { display: block; font-size: 10px; color: var(--lime); margin-bottom: 8px; }
-.hero-meta strong { font-size: 14px; line-height: 1.45; }
+.hero-meta span { display: block; font-size: 11px; color: var(--lime); margin-bottom: 8px; }
+.hero-meta strong { font-size: 15px; line-height: 1.5; }
 
 /* Hero entrance — staggered fade-up on first paint */
 @keyframes heroIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
@@ -213,7 +213,7 @@ footer a:hover { color: white; }
    tracking and sub-1 leading the Latin headings are tuned for, so the
    Chinese pages relax both and widen the hero column to avoid mid-phrase
    wraps. English pages keep the original tight display look. */
-.lang-zh .hero h1 { font-size: clamp(50px, 6.6vw, 104px); letter-spacing: -.01em; line-height: 1.14; }
+.lang-zh .hero h1 { font-size: clamp(46px, 5.6vw, 90px); letter-spacing: -.01em; line-height: 1.16; }
 .lang-zh .hero-copy { width: min(1040px, 86vw); }
 .lang-zh .section h2,
 .lang-zh .venue h2,
@@ -228,7 +228,7 @@ footer a:hover { color: white; }
 .lang-zh .abilities p,
 .lang-zh .audience-list p,
 .lang-zh details p { line-height: 1.85; }
-.lang-zh .hero-meta strong { font-size: 15px; }
+.lang-zh .hero-meta strong { font-size: 16px; }
 
 @media (max-width: 900px) {
   .site-header { position: fixed; height: 68px; }
