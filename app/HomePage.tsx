@@ -331,7 +331,16 @@ export default function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       <section className="venue">
-        <div className="venue-visual" aria-hidden="true"><span><Lines items={t.venue.coords.split("\n")} /></span><div className="rings" /></div>
+        <div className="venue-visual">
+          <iframe
+            className="venue-map"
+            title={t.venue.h2.join("")}
+            src={`https://www.google.com/maps?q=%E5%A4%A7%E6%9D%BF%E6%A0%B9%E6%A3%AE%E6%9E%97%E6%BA%AB%E6%B3%89%E9%85%92%E5%BA%97&z=15&hl=${lang === "en" ? "en" : "zh-TW"}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
         <div className="venue-copy" data-reveal>
           <div className="section-label">{t.venue.label}</div>
           <p>{t.venue.dateline}</p>
