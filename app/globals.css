@@ -78,7 +78,7 @@ nav a.active { opacity: 1; color: var(--lime); }
 .hero-actions { display: flex; gap: 12px; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-width: 220px; min-height: 60px; padding: 0 24px; font-weight: 700; font-size: 16px; line-height: 1; border: 1px solid transparent; transition: transform .2s, background .2s; }
 .button:hover { transform: translateY(-2px); }
-.button.primary { background: var(--lime); color: var(--ink); }
+.button.primary { background: var(--lime); color: var(--on-lime); }
 .button.ghost { border-color: rgba(255,255,255,.45); }
 .hero-meta { position: absolute; right: 5vw; bottom: 52px; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.35); width: min(520px, 42vw); }
 .hero-meta > div { padding: 14px 16px; border-right: 1px solid rgba(255,255,255,.2); }
