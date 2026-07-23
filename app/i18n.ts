@@ -104,7 +104,7 @@ export const content: Record<Lang, Content> = {
     criteria: {
       label: "04 / JUDGING",
       kicker: "兩階段評選・從提案到實機驗證",
-      h2: ["評的不只是創意，", "更是落地與自主性。"],
+      h2: ["評的不只是創意，更是落地與自主性。"],
       groups: [
         {
           title: "初賽｜提案計畫書＋概念影片",

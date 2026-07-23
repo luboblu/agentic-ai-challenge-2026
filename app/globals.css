@@ -246,9 +246,10 @@ footer a:hover { color: white; }
 .gaps li { font-size: 16px; color: var(--muted); border: 1px solid var(--line); border-radius: 30px; padding: 9px 16px; }
 
 /* JUDGING / weighted criteria */
-.criteria-head { max-width: 740px; margin: 60px 0 44px; }
+.criteria-head { max-width: none; margin: 60px 0 44px; }
 .crit-kicker { color: var(--accent-text); font: 13.5px monospace; letter-spacing: .12em; margin: 0 0 18px; text-transform: uppercase; }
 .criteria-head h2 { margin: 0; }
+.lang-zh .criteria-head h2 { white-space: nowrap; font-size: clamp(38px, 4.2vw, 72px); }
 .crit-group + .crit-group { margin-top: 62px; }
 .crit-group-title { margin: 0 0 20px; font-size: 24px; color: var(--accent-text); letter-spacing: -.01em; }
 .crit-list { border-top: 1px solid var(--line); }
@@ -297,6 +298,7 @@ footer a:hover { color: white; }
 }
 
 @media (max-width: 580px) {
+  .lang-zh .criteria-head h2 { white-space: normal; }
   .brand small { display: none; }
   .hero { min-height: 900px; }
   .eyebrow { flex-direction: column; gap: 5px; }
