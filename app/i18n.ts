@@ -129,7 +129,7 @@ export const content: Record<Lang, Content> = {
     },
     timeline: {
       label: "06 / TIMELINE",
-      h2: ["從一個提案，", "走到決賽舞台。"],
+      h2: ["從一個提案，走到決賽舞台。"],
       p: "完整競賽辦法預計於 2026 年 8 月公告。先記下關鍵月份，開始尋找隊友、盤點能力，準備迎接企業命題。",
       phases: [
         { date: "2026.06 — 07", title: "企業邀請與題目確認", text: "合作企業提出實務題目，與中央、北大團隊共同精煉出題目固定、數據去敏感、具評分標準的規格。", status: "籌備中" },
@@ -271,7 +271,7 @@ export const content: Record<Lang, Content> = {
     },
     timeline: {
       label: "06 / TIMELINE",
-      h2: ["From a single proposal", "to the final stage."],
+      h2: ["From a single proposal to the final stage."],
       p: "Full contest guidelines are expected in August 2026. Note the key months, start finding teammates, take stock of your skills, and get ready for the enterprise challenges.",
       phases: [
         { date: "2026.06 — 07", title: "Enterprise topics confirmed", text: "Partner companies propose real problems, refined with NCU and NTPU teams into fixed, de-identified, rubric-ready specs.", status: "In prep" },
