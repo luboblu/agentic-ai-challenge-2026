@@ -83,7 +83,7 @@ export const content: Record<Lang, Content> = {
     why: {
       label: "02 / WHY AGENTIC AI",
       kicker: "AI 競爭進入 AGENT 時代",
-      h2: ["企業要的，不再只是", "會回答的模型。"],
+      h2: ["企業要的，不再只是會回答的模型。"],
       intro: "生成式 AI 快速發展，大型語言模型已成為數位轉型的重要工具。但企業真正的挑戰，是如何把 AI 嵌入既有流程、串接內外部系統、讓 AI 自主規劃並執行任務。產業因此仍面臨兩大缺口。",
       cards: [
         { tag: "人才缺口", title: "缺乏具實務能力的 Agent AI 人才", points: ["AI 技術能力", "系統整合能力", "流程理解能力"] },
@@ -225,7 +225,7 @@ export const content: Record<Lang, Content> = {
     why: {
       label: "02 / WHY AGENTIC AI",
       kicker: "AI COMPETITION ENTERS THE AGENT ERA",
-      h2: ["Enterprises need more", "than a model that answers."],
+      h2: ["Enterprises need more than a model that answers."],
       intro: "Generative AI has moved fast, and LLMs are now core to digital transformation. But the real enterprise challenge is embedding AI into existing workflows, connecting internal and external systems, and letting AI plan and execute tasks on its own. Two gaps remain.",
       cards: [
         { tag: "Talent gap", title: "Too few people with hands-on Agent AI skills", points: ["AI engineering", "Systems integration", "Process understanding"] },
