@@ -68,10 +68,10 @@ nav a.active { opacity: 1; color: var(--lime); }
 .orb { position: absolute; border-radius: 50%; filter: blur(2px); }
 .orb-one { width: 480px; height: 480px; right: 7vw; top: 17%; background: radial-gradient(circle at 36% 30%, #e4ff9a, #6ea381 38%, #123326 70%); box-shadow: 0 0 100px rgba(172,255,96,.2); opacity: .83; }
 .orb-two { width: 230px; height: 230px; right: 23vw; top: 50%; border: 1px solid rgba(200,255,61,.5); box-shadow: inset 0 0 70px rgba(200,255,61,.1); }
-.eyebrow { position: relative; display: flex; gap: 28px; font-size: 13.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); }
+.eyebrow { position: relative; display: flex; gap: 28px; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
 .eyebrow span + span { color: rgba(255,255,255,.6); }
 .hero-copy { position: relative; width: min(820px, 70vw); z-index: 2; }
-.hero-kicker { border-left: 2px solid var(--lime); padding-left: 14px; line-height: 1.5; font-size: 18.5px; font-weight: 700; }
+.hero-kicker { border-left: 2px solid var(--lime); padding-left: 14px; line-height: 1.5; font-size: 20px; font-weight: 700; }
 .hero h1 { font-size: clamp(62px, 8.4vw, 132px); line-height: .92; letter-spacing: -.065em; margin: 24px 0 30px; font-weight: 700; }
 .hero h1 em { color: var(--lime); font-style: normal; }
 .hero-lead { font-size: 20.5px; line-height: 1.85; color: rgba(255,255,255,.8); max-width: 680px; }
@@ -82,8 +82,8 @@ nav a.active { opacity: 1; color: var(--lime); }
 .button.ghost { border-color: rgba(255,255,255,.45); }
 .hero-meta { position: absolute; right: 5vw; bottom: 52px; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.35); width: min(520px, 42vw); }
 .hero-meta > div { padding: 14px 16px; border-right: 1px solid rgba(255,255,255,.2); }
-.hero-meta span { display: block; font-size: 12px; color: var(--lime); margin-bottom: 8px; }
-.hero-meta strong { font-size: 16px; line-height: 1.5; }
+.hero-meta span { display: block; font-size: 13px; color: var(--lime); margin-bottom: 8px; }
+.hero-meta strong { font-size: 18px; line-height: 1.5; }
 
 /* Hero entrance — staggered fade-up on first paint */
 @keyframes heroIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
@@ -96,8 +96,8 @@ nav a.active { opacity: 1; color: var(--lime); }
 .hero-meta { animation-delay: .74s; }
 
 .countdown-band { background: var(--lime); color: var(--on-lime); min-height: 165px; display: flex; justify-content: space-between; align-items: center; padding: 28px 5vw; }
-.countdown-band > div:first-child p { font-size: 13px; font-weight: 800; letter-spacing: .16em; }
-.countdown-band > div:first-child span { font-size: 14.5px; }
+.countdown-band > div:first-child p { font-size: 15px; font-weight: 800; letter-spacing: .14em; }
+.countdown-band > div:first-child span { font-size: 16.5px; }
 .countdown { display: flex; gap: clamp(18px, 4vw, 64px); }
 .count { text-align: center; min-width: 65px; }
 .count strong { display: block; font-size: clamp(42px, 5vw, 70px); line-height: 1; letter-spacing: -.06em; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
@@ -228,7 +228,7 @@ footer a:hover { color: white; }
 .lang-zh .abilities p,
 .lang-zh .audience-list p,
 .lang-zh details p { line-height: 1.85; }
-.lang-zh .hero-meta strong { font-size: 16px; }
+.lang-zh .hero-meta strong { font-size: 19px; }
 
 @media (max-width: 900px) {
   .site-header { position: fixed; height: 68px; }
