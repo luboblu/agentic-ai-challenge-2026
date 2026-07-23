@@ -217,6 +217,8 @@ footer a:hover { color: white; }
    wraps. English pages keep the original tight display look. */
 .lang-zh .hero h1 { font-size: clamp(46px, 5.6vw, 90px); letter-spacing: -.01em; line-height: 1.16; }
 .lang-zh .hero-copy { width: min(1040px, 86vw); }
+.lang-en .hero-copy { width: min(1080px, 72vw); }
+.lang-en .hero h1 { font-size: clamp(58px, 6vw, 104px); line-height: .94; }
 .lang-zh .section h2,
 .lang-zh .venue h2,
 .lang-zh .register h2,
