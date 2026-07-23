@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { content, type Lang } from "./i18n";
 
@@ -55,7 +55,7 @@ function Countdown({ label, units }: { label: string; units: Record<string, stri
   );
 }
 
-const navIds = ["about", "challenge", "timeline", "faq"] as const;
+const navIds = ["about", "challenge", "criteria", "timeline", "faq"] as const;
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -231,6 +231,24 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      <section className="section why">
+        <div className="section-label">{t.why.label}</div>
+        <div className="why-head" data-reveal>
+          <p className="why-kicker">{t.why.kicker}</p>
+          <h2><Lines items={t.why.h2} /></h2>
+          <p className="why-intro">{t.why.intro}</p>
+        </div>
+        <div className="gaps">
+          {t.why.cards.map((card, i) => (
+            <article key={card.tag} data-reveal style={{ transitionDelay: `${i * 90}ms` }}>
+              <span className="gap-tag">{card.tag}</span>
+              <h3>{card.title}</h3>
+              <ul>{card.points.map((p) => <li key={p}>{p}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section dark" id="challenge">
         <div className="section-label">{t.challenge.label}</div>
         <div className="dark-title" data-reveal>
@@ -250,6 +268,29 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <span>{t.challenge.techLabel}</span>
           <div>{t.challenge.techs.map((tech) => <b key={tech}>{tech}</b>)}</div>
         </div>
+      </section>
+
+      <section className="section criteria" id="criteria">
+        <div className="section-label">{t.criteria.label}</div>
+        <div className="criteria-head" data-reveal>
+          <p className="crit-kicker">{t.criteria.kicker}</p>
+          <h2><Lines items={t.criteria.h2} /></h2>
+        </div>
+        <div className="crit-list">
+          {t.criteria.items.map((item, i) => (
+            <div
+              className="crit"
+              key={item.name}
+              data-reveal
+              style={{ transitionDelay: `${i * 70}ms`, ["--w"]: `${item.weight}%` } as CSSProperties}
+            >
+              <div className="crit-top"><b>{item.name}</b><span>{item.weight}%</span></div>
+              <div className="crit-bar"><i /></div>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <p className="crit-note">{t.criteria.note}</p>
       </section>
 
       <section className="section audience">
