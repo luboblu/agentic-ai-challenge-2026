@@ -76,7 +76,7 @@ nav a.active { opacity: 1; color: var(--lime); }
 .hero h1 em { color: var(--lime); font-style: normal; }
 .hero-lead { font-size: 20.5px; line-height: 1.85; color: rgba(255,255,255,.8); max-width: 680px; }
 .hero-actions { display: flex; gap: 12px; margin-top: 34px; }
-.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-width: 195px; padding: 16px 18px; font-weight: 700; font-size: 13px; border: 1px solid transparent; transition: transform .2s, background .2s; }
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-width: 220px; padding: 19px 24px; font-weight: 700; font-size: 16px; border: 1px solid transparent; transition: transform .2s, background .2s; }
 .button:hover { transform: translateY(-2px); }
 .button.primary { background: var(--lime); color: var(--ink); }
 .button.ghost { border-color: rgba(255,255,255,.45); }
@@ -194,13 +194,13 @@ details p { color: var(--muted); line-height: 1.8; margin: -5px 40px 24px 0; fon
 .register { background: var(--lime); color: var(--on-lime); min-height: 620px; padding: 100px 5vw 65px; position: relative; overflow: hidden; }
 .register-grid { opacity: .2; background-image: linear-gradient(rgba(17,22,18,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(17,22,18,.35) 1px, transparent 1px); }
 .register > *:not(.register-grid) { position: relative; }
-.register > p:first-of-type { font: 14px monospace; letter-spacing: .14em; }
+.register > p:first-of-type { font: 15px monospace; letter-spacing: .12em; font-weight: 700; }
 .register h2 { font-size: clamp(62px, 8vw, 116px); margin: 35px 0 30px; }
-.register-lead { max-width: 640px; font-size: 18px; line-height: 1.75; }
+.register-lead { max-width: 660px; font-size: 21px; line-height: 1.8; }
 .register-actions { display: flex; gap: 12px; margin-top: 32px; }
 .button.light { background: var(--on-lime); color: #f2f0e8; }
 .button.outline-light { border-color: var(--on-lime); }
-.register small { display: block; margin-top: 45px; }
+.register small { display: block; margin-top: 42px; font-size: 15px; line-height: 1.7; color: rgba(17,22,18,.72); }
 
 footer { background: #0d130f; color: white; padding: 70px 5vw 30px; display: grid; grid-template-columns: 1.5fr 1.2fr .75fr 1fr; gap: 5vw; font-size: 13.5px; }
 .footer-brand { display: flex; gap: 18px; }
