@@ -68,7 +68,8 @@ nav a.active { opacity: 1; color: var(--lime); }
 .orb { position: absolute; border-radius: 50%; filter: blur(2px); }
 .orb-one { width: 480px; height: 480px; right: 7vw; top: 17%; background: radial-gradient(circle at 36% 30%, #e4ff9a, #6ea381 38%, #123326 70%); box-shadow: 0 0 100px rgba(172,255,96,.2); opacity: .83; }
 .orb-two { width: 230px; height: 230px; right: 23vw; top: 50%; border: 1px solid rgba(200,255,61,.5); box-shadow: inset 0 0 70px rgba(200,255,61,.1); }
-.eyebrow { position: relative; display: flex; gap: 28px; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; color: var(--lime); }
+.eyebrow { position: relative; display: flex; align-items: baseline; gap: 28px; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; color: var(--lime); }
+.eyebrow span:first-child { font-size: clamp(21px, 1.45vw, 27px); font-weight: 800; letter-spacing: .055em; }
 .eyebrow span + span { color: rgba(255,255,255,.6); }
 .hero-copy { position: relative; width: min(820px, 70vw); z-index: 2; }
 .hero-kicker { border-left: 3px solid var(--lime); padding-left: 16px; line-height: 1.55; font-size: 22px; font-weight: 700; }
