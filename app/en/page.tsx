@@ -5,15 +5,14 @@ import { content } from "../i18n";
 const t = content.en;
 
 export const metadata: Metadata = {
-  title: "2026 Agentic AI Enterprise Challenge",
+  title: "NAPAI Agentic AI Campus Innovation Challenge × TAAI 2026",
   description:
-    "Enterprises pose, academia solves. College students nationwide build verifiable, production-ready Agentic AI solutions to real enterprise problems.",
+    "University students nationwide build and live-demo deployable Agentic AI applications for real campus and industry needs.",
   openGraph: {
-    title: "2026 Agentic AI Enterprise Challenge",
+    title: "NAPAI Agentic AI Campus Innovation Challenge × TAAI 2026",
     description: t.hero.lead,
     type: "website",
     locale: "en_US",
-    images: [{ url: "og.png", width: 1200, height: 630, alt: "2026 Agentic AI Enterprise Challenge" }],
   },
 };
 

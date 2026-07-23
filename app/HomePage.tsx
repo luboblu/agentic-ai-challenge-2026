@@ -30,7 +30,7 @@ function Countdown({ label, units }: { label: string; units: Record<string, stri
 
   useEffect(() => {
     const update = () => {
-      const diff = Math.max(0, new Date("2026-11-20T09:00:00+08:00").getTime() - Date.now());
+      const diff = Math.max(0, new Date("2026-11-21T09:00:00+08:00").getTime() - Date.now());
       setTime({
         days: Math.floor(diff / 86400000),
         hours: Math.floor((diff / 3600000) % 24),
@@ -276,20 +276,25 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <p className="crit-kicker">{t.criteria.kicker}</p>
           <h2><Lines items={t.criteria.h2} /></h2>
         </div>
-        <div className="crit-list">
-          {t.criteria.items.map((item, i) => (
-            <div
-              className="crit"
-              key={item.name}
-              data-reveal
-              style={{ transitionDelay: `${i * 70}ms`, ["--w"]: `${item.weight}%` } as CSSProperties}
-            >
-              <div className="crit-top"><b>{item.name}</b><span>{item.weight}%</span></div>
-              <div className="crit-bar"><i /></div>
-              <p>{item.desc}</p>
+        {t.criteria.groups.map((group, groupIndex) => (
+          <div className="crit-group" key={group.title}>
+            <h3 className="crit-group-title" data-reveal>{group.title}</h3>
+            <div className="crit-list">
+              {group.items.map((item, i) => (
+                <div
+                  className="crit"
+                  key={`${groupIndex}-${item.name}`}
+                  data-reveal
+                  style={{ transitionDelay: `${i * 70}ms`, ["--w"]: `${item.weight}%` } as CSSProperties}
+                >
+                  <div className="crit-top"><b>{item.name}</b><span>{item.weight}%</span></div>
+                  <div className="crit-bar"><i /></div>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
         <p className="crit-note">{t.criteria.note}</p>
       </section>
 
@@ -375,7 +380,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <p className="register-lead">{t.register.lead}</p>
         <div className="register-actions">
           <a className="button light" href="https://taai2026.github.io/" target="_blank" rel="noreferrer"><BtnLabel text={t.register.ctaSite} /></a>
-          <a className="button outline-light" href="mailto:taai2026org@gmail.com?subject=2026 Agentic AI"><BtnLabel text={t.register.ctaContact} /></a>
+          <a className="button outline-light" href="#timeline"><BtnLabel text={t.register.ctaContact} /></a>
         </div>
         <small>{t.register.note}</small>
       </section>
@@ -400,7 +405,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div>
           <h3>{t.footer.col3Title}</h3>
           {t.footer.col3.map((line) => <p key={line}>{line}</p>)}
-          <a href={`mailto:${t.footer.email}`}>{t.footer.email}</a>
+          {t.footer.email && <a href={`mailto:${t.footer.email}`}>{t.footer.email}</a>}
         </div>
         <p className="copyright">{t.footer.copyright}</p>
       </footer>

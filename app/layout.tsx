@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "2026 Agentic AI 智慧代理人企業挑戰賽";
-const description = "企業出題、學界解題。全國大專校院學生運用 Agentic AI 挑戰企業真實問題，打造可驗證、可落地的智慧代理人解決方案。";
+const title = "NAPAI Agentic AI 校園落地創新應用競賽 × TAAI 2026";
+const description = "全國大專校院學生以 Agentic AI 回應校園與產業真實需求，打造可自主規劃、串接系統並接受實機 Demo 驗證的落地應用。";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const metadataBase = siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`;
 
@@ -15,9 +15,8 @@ export const metadata: Metadata = {
     description,
     type: "website",
     locale: "zh_TW",
-    images: [{ url: "og.png", width: 1200, height: 630, alt: title }],
   },
-  twitter: { card: "summary_large_image", title, description, images: ["og.png"] },
+  twitter: { card: "summary", title, description },
 };
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.dataset.theme=t;}catch(e){}})();`;
