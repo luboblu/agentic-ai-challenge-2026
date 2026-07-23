@@ -137,7 +137,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
   }, []);
 
   return (
-    <main>
+    <main className={lang === "zh" ? "lang-zh" : "lang-en"}>
       <header className={`site-header${scrolled ? " scrolled" : ""}`}>
         <a className="brand" href="#top" aria-label={t.a11y.home}>
           <span className="brand-mark">A<span>↗</span></span>

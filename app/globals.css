@@ -209,6 +209,27 @@ footer p, footer a { color: rgba(255,255,255,.6); line-height: 1.6; display: blo
 footer a:hover { color: white; }
 .copyright { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.15); padding-top: 24px; margin-top: 35px; }
 
+/* CJK display type: full-width glyphs collide under the tight negative
+   tracking and sub-1 leading the Latin headings are tuned for, so the
+   Chinese pages relax both and widen the hero column to avoid mid-phrase
+   wraps. English pages keep the original tight display look. */
+.lang-zh .hero h1 { font-size: clamp(50px, 6.6vw, 104px); letter-spacing: -.01em; line-height: 1.14; }
+.lang-zh .hero-copy { width: min(1040px, 86vw); }
+.lang-zh .section h2,
+.lang-zh .venue h2,
+.lang-zh .register h2,
+.lang-zh .faq-layout h2,
+.lang-zh .venue-copy h2 { letter-spacing: -.008em; line-height: 1.16; }
+.lang-zh .abilities h3 { letter-spacing: 0; }
+.lang-zh .hero-kicker { line-height: 1.7; }
+/* Nudge the smallest / densest Chinese body copy up for legibility. */
+.lang-zh .timeline p { font-size: 14px; line-height: 1.7; }
+.lang-zh .value-grid p,
+.lang-zh .abilities p,
+.lang-zh .audience-list p,
+.lang-zh details p { line-height: 1.85; }
+.lang-zh .hero-meta strong { font-size: 15px; }
+
 @media (max-width: 900px) {
   .site-header { position: fixed; height: 68px; }
   .site-header.scrolled { height: 60px; }
