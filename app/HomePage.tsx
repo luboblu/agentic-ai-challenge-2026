@@ -323,7 +323,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               className={index === t.timeline.phases.length - 1 ? "final-phase" : undefined}
             >
               <time>{phase.date}</time>
-              <div><span>{String(index + 1).padStart(2, "0")}</span><h3>{phase.title}</h3><p>{phase.text}</p></div>
+              <div><h3>{phase.title}</h3><p>{phase.text}</p></div>
               <b>{phase.status}</b>
             </article>
           ))}
