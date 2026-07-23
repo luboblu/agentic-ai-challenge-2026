@@ -76,7 +76,7 @@ nav a.active { opacity: 1; color: var(--lime); }
 .hero h1 em { color: var(--lime); font-style: normal; }
 .hero-lead { font-size: 20.5px; line-height: 1.85; color: rgba(255,255,255,.8); max-width: 680px; }
 .hero-actions { display: flex; gap: 12px; margin-top: 34px; }
-.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-width: 220px; padding: 19px 24px; font-weight: 700; font-size: 16px; border: 1px solid transparent; transition: transform .2s, background .2s; }
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-width: 220px; min-height: 60px; padding: 0 24px; font-weight: 700; font-size: 16px; line-height: 1; border: 1px solid transparent; transition: transform .2s, background .2s; }
 .button:hover { transform: translateY(-2px); }
 .button.primary { background: var(--lime); color: var(--ink); }
 .button.ghost { border-color: rgba(255,255,255,.45); }
@@ -202,13 +202,14 @@ details p { color: var(--muted); line-height: 1.8; margin: -5px 40px 24px 0; fon
 .button.outline-light { border-color: var(--on-lime); }
 .register small { display: block; margin-top: 42px; font-size: 15px; line-height: 1.7; color: rgba(17,22,18,.72); }
 
-footer { background: #0d130f; color: white; padding: 70px 5vw 30px; display: grid; grid-template-columns: 1.5fr 1.2fr .75fr 1fr; gap: 5vw; font-size: 13.5px; }
+footer { background: #0d130f; color: white; padding: 76px 5vw 34px; display: grid; grid-template-columns: 1.5fr 1.2fr .75fr 1fr; gap: 5vw; font-size: 16px; }
 .footer-brand { display: flex; gap: 18px; }
-.footer-brand b { font-size: 18px; line-height: 1.45; }
-footer h3 { color: var(--lime); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 20px; }
-footer p, footer a { color: rgba(255,255,255,.6); line-height: 1.6; display: block; margin: 0 0 8px; }
+.footer-brand b { font-size: 22px; line-height: 1.45; }
+.footer-brand p { font-size: 16px; margin-top: 10px; }
+footer h3 { color: var(--lime); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 22px; }
+footer p, footer a { color: rgba(255,255,255,.68); font-size: 16px; line-height: 1.7; display: block; margin: 0 0 10px; }
 footer a:hover { color: white; }
-.copyright { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.15); padding-top: 24px; margin-top: 35px; }
+.copyright { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.15); padding-top: 26px; margin-top: 38px; font-size: 14px; }
 
 /* CJK display type: full-width glyphs collide under the tight negative
    tracking and sub-1 leading the Latin headings are tuned for, so the
@@ -319,7 +320,7 @@ footer a:hover { color: white; }
   .venue-visual { min-height: 360px; }
   .register { min-height: 650px; padding-top: 75px; }
   .register h2 { font-size: 52px; }
-  footer { grid-template-columns: 1fr; gap: 35px; }
+  footer { grid-template-columns: 1fr; gap: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
