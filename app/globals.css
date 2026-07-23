@@ -107,7 +107,7 @@ nav a.active { opacity: 1; color: var(--lime); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 .section { padding: 105px 5vw; }
-.section-label { font-size: 12.5px; letter-spacing: .18em; font-weight: 800; padding-bottom: 15px; border-bottom: 1px solid currentColor; opacity: .66; }
+.section-label { font-size: 14.5px; letter-spacing: .16em; font-weight: 800; padding-bottom: 15px; border-bottom: 1px solid currentColor; opacity: .66; }
 .section-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10vw; margin: 66px 0 85px; }
 .section h2, .venue h2, .register h2 { font-size: clamp(45px, 6vw, 88px); line-height: .98; letter-spacing: -.055em; margin: 0; }
 .section-heading > div { max-width: 600px; padding-top: 8px; }
@@ -125,7 +125,7 @@ nav a.active { opacity: 1; color: var(--lime); }
 .dark { background: #101512; color: white; }
 .dark .section-label { border-color: rgba(255,255,255,.35); }
 .dark-title { margin: 65px 0; }
-.dark-title > p { color: var(--lime); font: 11px monospace; letter-spacing: .16em; }
+.dark-title > p { color: var(--lime); font: 13px monospace; letter-spacing: .14em; }
 .abilities { border-top: 1px solid rgba(255,255,255,.3); }
 .abilities article { display: grid; grid-template-columns: 90px 1fr auto; align-items: center; gap: 30px; padding: 34px 8px; border-bottom: 1px solid rgba(255,255,255,.25); transition: padding-left .35s ease, background .35s ease; }
 .abilities article:hover { padding-left: 22px; background: linear-gradient(90deg, rgba(200,255,61,.07), transparent 60%); }
@@ -171,7 +171,7 @@ nav a.active { opacity: 1; color: var(--lime); }
 .venue-visual > span { position: absolute; left: 8%; bottom: 8%; z-index: 2; font: 11px monospace; color: var(--lime); line-height: 1.6; }
 .rings { position: absolute; width: 320px; height: 320px; border: 1px solid rgba(200,255,61,.6); border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%,-50%); box-shadow: 0 0 0 45px rgba(200,255,61,.04), 0 0 0 90px rgba(200,255,61,.03); }
 .venue-copy { padding: 75px 6vw; display: flex; flex-direction: column; }
-.venue-copy > p:not(.venue-text) { color: var(--lime); font: 11px monospace; letter-spacing: .12em; margin: 55px 0 20px; }
+.venue-copy > p:not(.venue-text) { color: var(--lime); font: 13px monospace; letter-spacing: .1em; margin: 55px 0 20px; }
 .venue-copy h2 { font-size: clamp(50px, 5.3vw, 82px); }
 .venue-text { color: rgba(255,255,255,.72); font-size: 17px; line-height: 1.85; max-width: 590px; margin: 38px 0; }
 .venue dl { margin-top: auto; }
@@ -193,7 +193,7 @@ details p { color: var(--muted); line-height: 1.8; margin: -5px 40px 24px 0; fon
 .register { background: var(--lime); color: var(--on-lime); min-height: 620px; padding: 100px 5vw 65px; position: relative; overflow: hidden; }
 .register-grid { opacity: .2; background-image: linear-gradient(rgba(17,22,18,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(17,22,18,.35) 1px, transparent 1px); }
 .register > *:not(.register-grid) { position: relative; }
-.register > p:first-of-type { font: 12px monospace; letter-spacing: .16em; }
+.register > p:first-of-type { font: 14px monospace; letter-spacing: .14em; }
 .register h2 { font-size: clamp(62px, 8vw, 116px); margin: 35px 0 30px; }
 .register-lead { max-width: 640px; font-size: 18px; line-height: 1.75; }
 .register-actions { display: flex; gap: 12px; margin-top: 32px; }
@@ -232,7 +232,7 @@ footer a:hover { color: white; }
 
 /* WHY / industry gaps */
 .why-head { max-width: 1180px; margin: 56px 0 48px; }
-.why-kicker { color: var(--accent-text); font: 12px monospace; letter-spacing: .14em; margin: 0 0 18px; text-transform: uppercase; }
+.why-kicker { color: var(--accent-text); font: 13.5px monospace; letter-spacing: .12em; margin: 0 0 18px; text-transform: uppercase; }
 .why-head h2 { font-size: clamp(30px, 3.4vw, 52px); margin: 0 0 26px; }
 .why-intro { font-size: 19px; line-height: 1.9; color: var(--muted); max-width: 880px; }
 .gaps { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -245,7 +245,7 @@ footer a:hover { color: white; }
 
 /* JUDGING / weighted criteria */
 .criteria-head { max-width: 740px; margin: 60px 0 44px; }
-.crit-kicker { color: var(--accent-text); font: 12px monospace; letter-spacing: .14em; margin: 0 0 18px; text-transform: uppercase; }
+.crit-kicker { color: var(--accent-text); font: 13.5px monospace; letter-spacing: .12em; margin: 0 0 18px; text-transform: uppercase; }
 .criteria-head h2 { margin: 0; }
 .crit-list { border-top: 1px solid var(--line); }
 .crit { border-bottom: 1px solid var(--line); padding: 28px 0; }
