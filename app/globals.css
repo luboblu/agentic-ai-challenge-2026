@@ -142,12 +142,12 @@ nav a.active { opacity: 1; color: var(--lime); }
 
 .audience-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 10vw; margin-top: 66px; }
 .audience h2 em { color: var(--accent-text); font-style: normal; }
-.audience-layout > div:first-child > p { max-width: 620px; font-size: 17px; line-height: 1.85; color: var(--muted); margin-top: 35px; }
+.audience-layout > div:first-child > p { max-width: 620px; font-size: 19px; line-height: 1.85; color: var(--muted); margin-top: 35px; }
 .audience-list { border-top: 1px solid var(--line); }
-.audience-list > div { display: grid; grid-template-columns: 46px 1fr; border-bottom: 1px solid var(--line); padding: 24px 0; }
-.audience-list span { color: var(--accent-text); font-size: 20px; }
-.audience-list p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
-.audience-list b { display: block; font-size: 18px; color: var(--ink); margin-bottom: 6px; }
+.audience-list > div { display: grid; grid-template-columns: 64px 1fr; gap: 8px; border-bottom: 1px solid var(--line); padding: 28px 0; }
+.audience-list span { color: var(--accent-text); font-size: 25px; font-weight: 700; line-height: 1.35; }
+.audience-list p { margin: 0; font-size: 17.5px; line-height: 1.65; color: var(--muted); }
+.audience-list b { display: block; font-size: 23px; color: var(--ink); margin-bottom: 9px; }
 
 .timeline-section { background: var(--surface-alt); }
 .timeline-heading { max-width: 1120px; margin: 60px auto 44px; }
@@ -266,9 +266,33 @@ footer a:hover { color: white; }
 .crit p { margin: 15px 0 0; color: var(--muted); font-size: 15.5px; line-height: 1.7; max-width: 760px; }
 .crit-note { margin-top: 40px; font-size: 14.5px; line-height: 1.75; color: var(--muted); max-width: 840px; border-left: 3px solid var(--line); padding-left: 18px; }
 
+/* AWARDS / prizes and incentives */
+.awards-head { max-width: 1180px; margin: 58px 0 46px; }
+.awards-kicker { color: var(--accent-text); font: 13.5px monospace; letter-spacing: .12em; margin: 0 0 18px; text-transform: uppercase; }
+.awards-head h2 { font-size: clamp(38px, 4.6vw, 74px); margin: 0 0 26px; }
+.awards-intro { font-size: 19px; line-height: 1.9; color: var(--muted); max-width: 900px; margin: 0; }
+.award-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.award { border: 1px solid var(--line); padding: 38px 36px; display: flex; flex-direction: column; gap: 14px; transition: background .3s ease; }
+.award:not(.featured):hover { background: var(--card-hover); }
+.award-tag { align-self: flex-start; font-size: 13.5px; font-weight: 800; letter-spacing: .06em; color: var(--accent-text); border: 1px solid var(--line); border-radius: 30px; padding: 8px 15px; }
+.award h3 { font-size: 30px; margin: 6px 0 0; letter-spacing: -.02em; }
+.award p { margin: 0; font-size: 17px; line-height: 1.8; color: var(--muted); }
+.award.featured { background: var(--lime); color: var(--on-lime); border-color: var(--lime); }
+.award.featured .award-tag { color: var(--on-lime); border-color: rgba(17,22,18,.35); }
+.award.featured p { color: rgba(17,22,18,.76); }
+.awards-note { margin-top: 40px; font-size: 14.5px; line-height: 1.75; color: var(--muted); max-width: 900px; border-left: 3px solid var(--line); padding-left: 18px; }
+.lang-zh .awards-head h2 { letter-spacing: -.008em; }
+.lang-zh .award h3 { letter-spacing: 0; }
+
+/* Six nav items + CTA get tight before the mobile menu takes over at 900px. */
+@media (max-width: 1180px) and (min-width: 901px) {
+  nav { gap: 18px; font-size: 14px; }
+  .nav-cta { padding: 12px 13px; }
+}
+
 @media (max-width: 900px) {
   .site-header { position: fixed; height: 68px; }
-  .gaps { grid-template-columns: 1fr; }
+  .gaps, .award-grid { grid-template-columns: 1fr; }
   .crit-top b { font-size: 18px; }
   .crit-top span { font-size: 22px; }
   .site-header.scrolled { height: 60px; }
@@ -318,6 +342,10 @@ footer a:hover { color: white; }
   .value-grid article { min-height: 220px; }
   .abilities article { grid-template-columns: 42px 1fr auto; gap: 12px; }
   .abilities h3 { font-size: 22px; }
+  .award { padding: 30px 24px; }
+  .award h3 { font-size: 25px; }
+  .audience-list > div { grid-template-columns: 56px 1fr; }
+  .audience-list b { font-size: 21px; }
   .tech-strip { grid-template-columns: 1fr; gap: 18px; }
   .timeline article { grid-template-columns: 1fr 70px; gap: 12px; }
   .timeline article > div { grid-column: 1 / -1; grid-row: 2; }

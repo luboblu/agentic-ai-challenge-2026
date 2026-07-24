@@ -6,10 +6,11 @@ type Phase = { date: string; title: string; text: string; status: string };
 type AudienceItem = { mark: string; title: string; text: string };
 type Faq = { q: string; a: string };
 type Criterion = { name: string; weight: number; desc: string };
+type Award = { tag: string; title: string; text: string; featured?: boolean };
 
 export type Content = {
   htmlLang: string;
-  nav: { about: string; challenge: string; criteria: string; timeline: string; faq: string; news: string };
+  nav: { about: string; challenge: string; criteria: string; awards: string; timeline: string; faq: string; news: string };
   brandSub: string;
   a11y: { home: string; menu: string; countdown: string; toLang: string; toTheme: string };
   hero: {
@@ -27,6 +28,7 @@ export type Content = {
     groups: { title: string; items: Criterion[] }[];
   };
   audience: { label: string; h2: string[]; h2em: string; p: string; list: AudienceItem[] };
+  awards: { label: string; kicker: string; h2: string[]; intro: string; items: Award[]; note: string };
   timeline: { label: string; h2: string[]; p: string; phases: Phase[] };
   venue: {
     label: string; coords: string; dateline: string; h2: string[]; text: string;
@@ -44,7 +46,7 @@ export type Content = {
 export const content: Record<Lang, Content> = {
   zh: {
     htmlLang: "zh-Hant",
-    nav: { about: "競賽介紹", challenge: "四大賽道", criteria: "評分標準", timeline: "重要時程", faq: "常見問題", news: "掌握報名資訊 ↗" },
+    nav: { about: "競賽介紹", challenge: "四大賽道", criteria: "評分標準", awards: "獎項", timeline: "重要時程", faq: "常見問題", news: "掌握報名資訊 ↗" },
     brandSub: "Campus Innovation Challenge 2026",
     a11y: { home: "回到頁首", menu: "開啟導覽選單", countdown: "距離決賽倒數", toLang: "切換英文", toTheme: "切換明暗模式" },
     hero: {
@@ -140,8 +142,21 @@ export const content: Record<Lang, Content> = {
         { mark: "1", title: "每位學生限參加一隊", text: "每隊原則上選擇一個賽道參賽。" },
       ],
     },
+    awards: {
+      label: "06 / AWARDS",
+      kicker: "獎金・獎狀・數位徽章・落地媒合",
+      h2: ["不只把獎帶走，", "更把作品帶進真實場域。"],
+      intro: "競賽設名次獎項與企業特別獎，並為所有完成決賽的團隊備妥數位徽章與參賽證明。表現優異的作品更有機會進入場域導入評估，讓成果延續到競賽之後。",
+      items: [
+        { tag: "名次獎項", title: "首獎・優選", text: "設首獎、優選等名次，頒發獎金與獎狀，表彰落地成熟度與整體完成度最高的作品。", featured: true },
+        { tag: "企業特別獎", title: "由贊助企業冠名設置", text: "表彰最具商用或落地價值之作品。評審並得視各賽道作品水準，於賽道首獎之外增設特別獎。" },
+        { tag: "完賽肯定", title: "數位徽章與參賽證書", text: "所有完成決賽的團隊均頒發數位徽章與參賽證明，可作為學習歷程與求職的具體佐證。" },
+        { tag: "落地與媒合", title: "導入評估與實習優先面試", text: "優秀作品可獲校園或企業場域的導入評估機會；參賽學生並享合作企業實習優先面試。" },
+      ],
+      note: "獎項名額、獎金金額與入圍獎金發放方式，以後續公布的正式競賽辦法為準。決賽若無法提供實機 Demo，主辦單位保留要求繳回入圍獎金之最終裁決權。",
+    },
     timeline: {
-      label: "06 / TIMELINE",
+      label: "07 / TIMELINE",
       h2: ["從技術增能，走到 TAAI 決賽舞台。"],
       p: "競賽採「增能—初賽—輔導—複賽」四階段。初賽以書面與影片審查，入圍後接受場域顧問輔導，最終以實機 Demo 與現場發表驗證成果。",
       phases: [
@@ -154,7 +169,7 @@ export const content: Record<Lang, Content> = {
       ],
     },
     venue: {
-      label: "07 / FINAL VENUE",
+      label: "08 / FINAL VENUE",
       coords: "25°16'N\n121°24'E",
       dateline: "NOVEMBER 21, 2026・NEW TAIPEI CITY",
       h2: ["大板根森林", "溫泉酒店"],
@@ -165,7 +180,7 @@ export const content: Record<Lang, Content> = {
       placeVal: "新北市三峽區，大板根森林溫泉酒店",
     },
     faq: {
-      label: "08 / FAQ",
+      label: "09 / FAQ",
       h2: "參賽前，你需要知道",
       items: [
         { q: "誰可以參加？隊伍要幾人？", a: "全國大專校院在學學生（含研究生）皆可參加，不限科系。每隊 3 至 5 人，須設隊長 1 名，可跨校跨域組隊；指導教師非必要。" },
@@ -193,6 +208,7 @@ export const content: Record<Lang, Content> = {
         { label: "競賽介紹", href: "#about" },
         { label: "四大賽道", href: "#challenge" },
         { label: "評分標準", href: "#criteria" },
+        { label: "獎項與激勵", href: "#awards" },
         { label: "重要時程", href: "#timeline" },
         { label: "TAAI 2026 ↗", href: "https://taai2026.github.io/", external: true },
       ],
@@ -204,7 +220,7 @@ export const content: Record<Lang, Content> = {
   },
   en: {
     htmlLang: "en",
-    nav: { about: "About", challenge: "Four Tracks", criteria: "Judging", timeline: "Timeline", faq: "FAQ", news: "Registration updates ↗" },
+    nav: { about: "About", challenge: "Four Tracks", criteria: "Judging", awards: "Awards", timeline: "Timeline", faq: "FAQ", news: "Registration updates ↗" },
     brandSub: "Campus Innovation Challenge 2026",
     a11y: { home: "Back to top", menu: "Open navigation menu", countdown: "Countdown to the final", toLang: "Switch to Chinese", toTheme: "Toggle light or dark theme" },
     hero: {
@@ -300,8 +316,21 @@ export const content: Record<Lang, Content> = {
         { mark: "1", title: "One team per student", text: "Each team should select one competition track." },
       ],
     },
+    awards: {
+      label: "06 / AWARDS",
+      kicker: "PRIZES・CERTIFICATES・BADGES・ADOPTION",
+      h2: ["More than a prize—", "a path into the real field."],
+      intro: "The challenge offers ranked prizes and sponsor-named special awards, with digital badges and certificates for every team that completes the final. Standout projects can move on to field adoption reviews.",
+      items: [
+        { tag: "Ranked prizes", title: "Top prize & merit awards", text: "Top and merit placements receive cash prizes and certificates, recognizing the most deployment-ready and complete work.", featured: true },
+        { tag: "Corporate award", title: "Sponsor-named special awards", text: "Recognizing the most commercially or operationally valuable work. Judges may add track-level special awards beyond each track's top prize." },
+        { tag: "Completion", title: "Digital badges & certificates", text: "Every team that completes the final receives a digital badge and certificate of participation for portfolios and job applications." },
+        { tag: "Adoption & matching", title: "Adoption review & priority interviews", text: "Standout projects may enter campus or enterprise adoption reviews, and participants receive priority internship interviews with partner companies." },
+      ],
+      note: "Award counts, prize amounts, and finalist award disbursement follow the official guidelines. If a finalist cannot provide a live demo, the organizer reserves the final right to request the return of the finalist award.",
+    },
     timeline: {
-      label: "06 / TIMELINE",
+      label: "07 / TIMELINE",
       h2: ["From technical training to the TAAI final stage."],
       p: "The four stages are training, preliminary review, mentoring, and the final. Written and video submissions lead to field mentoring, then a live demo and presentation at TAAI 2026.",
       phases: [
@@ -314,7 +343,7 @@ export const content: Record<Lang, Content> = {
       ],
     },
     venue: {
-      label: "07 / FINAL VENUE",
+      label: "08 / FINAL VENUE",
       coords: "25°16'N\n121°24'E",
       dateline: "NOVEMBER 21, 2026・NEW TAIPEI CITY",
       h2: ["The Great Roots", "Forestry Spa Resort"],
@@ -325,7 +354,7 @@ export const content: Record<Lang, Content> = {
       placeVal: "The Great Roots Forestry Spa Resort, Sanxia, New Taipei City",
     },
     faq: {
-      label: "08 / FAQ",
+      label: "09 / FAQ",
       h2: "Before you enter",
       items: [
         { q: "Who can join and how large is a team?", a: "Currently enrolled college and university students, including graduate students, may enter. Teams have 3–5 students, must name one leader, may be cross-campus and cross-disciplinary, and may optionally have one faculty adviser." },
@@ -353,6 +382,7 @@ export const content: Record<Lang, Content> = {
         { label: "About", href: "#about" },
         { label: "Four Tracks", href: "#challenge" },
         { label: "Judging", href: "#criteria" },
+        { label: "Awards", href: "#awards" },
         { label: "Timeline", href: "#timeline" },
         { label: "TAAI 2026 ↗", href: "https://taai2026.github.io/", external: true },
       ],

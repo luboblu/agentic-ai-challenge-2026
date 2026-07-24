@@ -55,7 +55,7 @@ function Countdown({ label, units }: { label: string; units: Record<string, stri
   );
 }
 
-const navIds = ["about", "challenge", "criteria", "timeline", "faq"] as const;
+const navIds = ["about", "challenge", "criteria", "awards", "timeline", "faq"] as const;
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -311,6 +311,30 @@ export default function HomePage({ lang }: { lang: Lang }) {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="section awards" id="awards">
+        <div className="section-label">{t.awards.label}</div>
+        <div className="awards-head" data-reveal>
+          <p className="awards-kicker">{t.awards.kicker}</p>
+          <h2><Lines items={t.awards.h2} /></h2>
+          <p className="awards-intro">{t.awards.intro}</p>
+        </div>
+        <div className="award-grid">
+          {t.awards.items.map((award, i) => (
+            <article
+              key={award.title}
+              className={award.featured ? "award featured" : "award"}
+              data-reveal
+              style={{ transitionDelay: `${i * 90}ms` }}
+            >
+              <span className="award-tag">{award.tag}</span>
+              <h3>{award.title}</h3>
+              <p>{award.text}</p>
+            </article>
+          ))}
+        </div>
+        <p className="awards-note">{t.awards.note}</p>
       </section>
 
       <section className="section timeline-section" id="timeline">
