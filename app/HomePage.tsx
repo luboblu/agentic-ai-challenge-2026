@@ -57,6 +57,63 @@ function Countdown({ label, units }: { label: string; units: Record<string, stri
 
 const navIds = ["about", "challenge", "criteria", "awards", "timeline", "faq"] as const;
 
+// Switching locales is a real route change, so the browser would drop the
+// reader back at the top. Both locales render the same blocks in the same
+// order, but Chinese and English copy differ in height — so instead of a raw
+// pixel offset we remember which block the reader was in and how far through
+// it they were, then land on the same spot in the other language.
+const SCROLL_KEY = "langSwitchAnchor";
+const HEADER_OFFSET = 80;
+
+function scrollBlocks() {
+  return Array.from(document.querySelectorAll<HTMLElement>("main > section, main > footer"));
+}
+
+function rememberScrollAnchor() {
+  const blocks = scrollBlocks();
+  const y = window.scrollY + HEADER_OFFSET;
+  let index = 0;
+  let ratio = 0;
+  blocks.forEach((block, i) => {
+    const rect = block.getBoundingClientRect();
+    const top = rect.top + window.scrollY;
+    if (y < top) return;
+    index = i;
+    ratio = rect.height ? Math.min(1, (y - top) / rect.height) : 0;
+  });
+  try {
+    sessionStorage.setItem(SCROLL_KEY, JSON.stringify({ index, ratio }));
+  } catch {
+    // Private-browsing quota failures just mean we land at the top as before.
+  }
+}
+
+function restoreScrollAnchor() {
+  let raw: string | null = null;
+  try {
+    raw = sessionStorage.getItem(SCROLL_KEY);
+    if (raw) sessionStorage.removeItem(SCROLL_KEY);
+  } catch {
+    return;
+  }
+  if (!raw) return;
+
+  let anchor: { index: number; ratio: number };
+  try {
+    anchor = JSON.parse(raw);
+  } catch {
+    return;
+  }
+
+  const block = scrollBlocks()[anchor.index];
+  if (!block) return;
+  const rect = block.getBoundingClientRect();
+  const top = rect.top + window.scrollY + rect.height * anchor.ratio - HEADER_OFFSET;
+  // "instant" overrides the page's smooth scroll-behavior, so the new language
+  // is simply already in the right place rather than animating there.
+  window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
+}
+
 export default function HomePage({ lang }: { lang: Lang }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -72,6 +129,12 @@ export default function HomePage({ lang }: { lang: Lang }) {
   useEffect(() => {
     document.documentElement.lang = t.htmlLang;
   }, [t.htmlLang]);
+
+  // Land on the block the reader left behind in the other language. Keyed on
+  // `lang` so it runs whether the route change remounts this component or not.
+  useEffect(() => {
+    restoreScrollAnchor();
+  }, [lang]);
 
   // Adopt the theme the inline layout script applied pre-paint, then start
   // syncing. Gating on `ready` avoids clobbering it (which would flash).
@@ -159,7 +222,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <a className="nav-cta" href="#register" onClick={() => setMenuOpen(false)}>{t.nav.news}</a>
           </nav>
           <div className="header-tools">
-            <Link className="tool" href={otherHref} aria-label={t.a11y.toLang}>
+            <Link
+              className="tool"
+              href={otherHref}
+              scroll={false}
+              onClick={rememberScrollAnchor}
+              aria-label={t.a11y.toLang}
+            >
               {otherLang === "en" ? "EN" : "中"}
             </Link>
             <button
