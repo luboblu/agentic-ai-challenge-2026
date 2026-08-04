@@ -2,15 +2,36 @@
 
 提供全國大專校院學生查詢競賽賽道、參賽資格、評分標準、時程、技術支援與決賽資訊的中英文網站。
 
+純靜態網站，沒有框架、沒有套件、沒有建置步驟。
+
+## 檔案
+
+| 檔案 | 內容 |
+|---|---|
+| `index.html` | 中文版整頁內容 |
+| `en/index.html` | 英文版整頁內容 |
+| `style.css` | 全站樣式 |
+| `main.js` | 互動：選單、明暗主題、倒數、捲動淡入、導覽高亮 |
+| `favicon.svg` | 瀏覽器分頁圖示 |
+
 ## 本機預覽
 
+用瀏覽器直接打開 `index.html` 就能看。
+
+若要用網址預覽（比較接近正式環境）：
+
 ```bash
-npm install
-npm run dev
+python -m http.server 8000
 ```
 
-開啟 `http://localhost:3000`。
+然後開啟 `http://localhost:8000`。
+
+## 修改內容
+
+文案、日期、獎項這些直接在 HTML 裡改。**中英文是兩個獨立檔案**，只改文字時改對應語言的檔案即可；調整版面結構則兩邊都要改，否則中英文會長得不一樣。
+
+改樣式請找 `style.css` 中「Site styles」以下的部分。上方的 reset 區塊把所有元素的 margin 與 padding 歸零，底下每一條規則都建立在這個前提上，換掉會讓版面位移。
 
 ## GitHub Pages
 
-推送到 `main` 後，`.github/workflows/deploy-pages.yml` 會自動建立並部署靜態網站。
+推送到 `main` 後，`.github/workflows/deploy-pages.yml` 會直接把這幾個檔案發佈上去，不需要建置。網頁裡所有路徑都是相對路徑，因此放在網域根目錄或 `/<repo>/` 之下都能正常運作。
