@@ -262,8 +262,12 @@ button { font: inherit; }
 .site-header { height: 78px; padding: 0 4vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.24); position: fixed; inset: 0 0 auto; z-index: 20; color: white; transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease, height .35s ease; }
 .site-header.scrolled { background: rgba(11,18,14,.82); backdrop-filter: saturate(150%) blur(12px); border-bottom-color: rgba(255,255,255,.12); height: 66px; }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark { width: 43px; height: 43px; border: 1px solid currentColor; display: grid; place-items: center; font-weight: 800; font-size: 21px; position: relative; }
-.brand-mark > span { color: var(--lime); font-size: 14px; position: absolute; right: 3px; top: 0; }
+/* The NAPAI mark, cropped to its brain icon: the full lockup is 2.6:1 and its
+   strapline would be unreadable squeezed into this square. The offsets were
+   measured from the file's alpha channel, so they track the artwork rather than
+   a guess. url() resolves against this stylesheet, so one value serves both
+   pages. Both places it appears — header and footer — sit on dark. */
+.brand-mark { width: 43px; height: 43px; flex-shrink: 0; background: url(napai-logo.png) -4px -2.6px / 127.4px 50px no-repeat; }
 .brand > span:last-child { display: flex; flex-direction: column; line-height: 1.1; }
 .brand b { font-size: 17px; text-transform: uppercase; letter-spacing: .04em; }
 .brand small { font-size: 11px; opacity: .72; letter-spacing: .07em; margin-top: 4px; text-transform: uppercase; }
