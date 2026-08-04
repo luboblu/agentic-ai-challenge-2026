@@ -30,7 +30,7 @@ jobs:
       - name: Collect site files
         run: |
           mkdir -p _site/en
-          cp index.html style.css main.js favicon.svg _site/
+          cp index.html style.css main.js favicon.svg napai-logo.png _site/
           cp en/index.html _site/en/
           touch _site/.nojekyll
 

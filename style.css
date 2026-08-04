@@ -440,6 +440,9 @@ footer { background: #0d130f; color: white; padding: 76px 5vw 34px; display: gri
 .footer-brand b { font-size: 18px; line-height: 1.45; }
 .footer-brand p { font-size: 16px; margin-top: 10px; }
 footer h3 { color: var(--lime); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 22px; }
+/* Organiser mark. The footer is always dark, so the logo's teal and pale
+   blue stay legible without a theme-specific variant. */
+.org-logo { width: 176px; height: auto; margin: -4px 0 18px; }
 footer p, footer a { color: rgba(255,255,255,.68); font-size: 15px; line-height: 1.7; display: block; margin: 0 0 10px; }
 footer a:hover { color: white; }
 .copyright { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.15); padding-top: 26px; margin-top: 38px; font-size: 14px; }
@@ -471,7 +474,7 @@ footer a:hover { color: white; }
 .why-head { max-width: 1180px; margin: 46px 0 40px; }
 .why-kicker { color: var(--accent-text); font: 13.5px monospace; letter-spacing: .12em; margin: 0 0 18px; text-transform: uppercase; }
 .why-head h2 { font-size: clamp(25px, 2.5vw, 38px); margin: 0 0 26px; }
-.why-intro { font-size: 16.5px; line-height: 1.9; color: var(--muted); max-width: 880px; }
+.why-intro { font-size: 15px; line-height: 1.9; color: var(--muted); }
 .gaps { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .gaps article { border: 1px solid var(--line); padding: 36px; display: flex; flex-direction: column; gap: 16px; transition: background .3s ease; }
 .gaps article:hover { background: var(--card-hover); }
